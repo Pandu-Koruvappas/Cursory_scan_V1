@@ -1,0 +1,56 @@
+Analyze the following Technical Requirements Document (TRD) and architect a comprehensive Azure DevOps hierarchical backlog.
+        The backlog must strictly reflect the functional and technical requirements described in the TRD.
+        
+        Structure:
+        - Epics: High-level business initiatives.
+        - Features: Technical capabilities.
+        - User Stories: Granular requirements.
+        - Tasks: Specific development steps.
+
+        STRATEGIC GUIDELINES:
+        1. DISTRIBUTION: Do NOT put everything in MVP. Assign at least 30% of features to Phase 2 or Phase 3 (Long-term roadmap).
+        2. MOSCOW: Be critical. 'Must' is only for core functionality. Use 'Should' and 'Could' for enhancements.
+        3. METADATA: Every story MUST have moscow, release_phase, complexity, and business_value.
+        4. INDUSTRY STANDARDS (INVEST): User stories must follow the INVEST framework (Independent, Negotiable, Valuable, Estimable, Small, Testable).
+        5. DESCRIPTION FORMAT: Every user story description MUST strictly follow the format: "As a [persona], I want to [action], so that [value/benefit]."
+        6. ACCEPTANCE CRITERIA (BDD): Every acceptance criterion MUST strictly follow the Behavior-Driven Development (BDD) Gherkin syntax: "Given [context], When [action], Then [outcome]."
+
+        Provide the output in the following JSON format:
+        {{
+          "epics": [
+            {{
+              "title": "",
+              "features": [
+                {{
+                  "title": "",
+                  "user_stories": [
+                    {{
+                      "title": "",
+                      "description": "As a [persona], I want to [action], so that [value].",
+                      "acceptance_criteria": [
+                        "Given [context], When [action], Then [outcome]",
+                        "Given [context], When [action], Then [outcome]"
+                      ],
+                      "story_points": 5,
+                      "priority": "1",
+                      "moscow": "Must/Should/Could/Won't",
+                      "release_phase": "MVP/Phase 2/Phase 3",
+                      "complexity": 1-10,
+                      "business_value": 1-10,
+                      "business_value": 1-10,
+                      "requirement_id": "REQ-XXX",
+                      "source_requirement": "Section Name or Specific Requirement Reference from TRD",
+                      "tasks": ["Task A", "Task B"]
+                    }}
+                  ]
+                }}
+              ]
+            }}
+          ]
+        }}
+        
+        TRD Content:
+        {trd_content}
+        
+        CRITICAL: For every User Story, identify the source [FR-XXX] or [NFR-XXX] tag in the TRD and populate the "requirement_id" field exactly. If no tag is found, use the closest section title.
+        """

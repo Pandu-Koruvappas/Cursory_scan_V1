@@ -1,0 +1,33 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+pymupdf
+requests
+python-dotenv
+google-genai>=0.3.0
+groq
+sqlalchemy
+psycopg2-binary
+azure-communication-email
+python-jose
+passlib
+gunicorn
+markdown
+azure-storage-blob
+# chromadb (Disabled)
+openai
+azure-search-documents
+python-docx
+python-pptx
+
+# MS Teams Bot
+botbuilder-core
+botbuilder-integration-aiohttp
+openpyxl  
+langgraph
+langchain-core
+
+# MCP Server Dependencies
+mcp
+azure-identity

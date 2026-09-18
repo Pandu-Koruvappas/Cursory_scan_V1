@@ -1,0 +1,31 @@
+{
+  "epics": [
+    {
+      "title": "High-level Epic Title",
+      "features": [
+        {
+          "title": "Technical Feature Title",
+          "user_stories": [
+            {
+              "title": "Story Title",
+              "description": "Insert fully formatted description based on user_story.md template here",
+              "acceptance_criteria": [
+                "Given [context], When [action], Then [outcome]",
+                "Given [context], When [action], Then [outcome]"
+              ],
+              "story_points": 5,
+              "priority": "1",
+              "moscow": "Must/Should/Could/Won't",
+              "release_phase": "MVP/Phase 2/Phase 3",
+              "complexity": 5,
+              "business_value": 8,
+              "requirement_id": "REQ-XXX",
+              "source_requirement": "Section Name or Specific Requirement Reference from TRD",
+              "tasks": ["Task A", "Task B"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

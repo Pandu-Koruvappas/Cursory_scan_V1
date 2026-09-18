@@ -1,0 +1,40 @@
+{
+  "test_cases": [
+    {
+      "test_case_id": "TC-001",
+      "user_story_id": "REQ-XXX",
+      "user_story_title": "Customer Account Registration",
+      "title": "Verify successful user login with valid credentials",
+      "priority": "High",
+      "severity": "Critical",
+      "test_type": "Functional",
+      "test_technique": "Equivalence Partitioning",
+      "automation_status": "Automated",
+      "traceability_matrix": ["AC-01", "AC-02"],
+      "description": "Insert fully formatted description based on test_case.md here",
+      "preconditions": [
+        "User is registered in the system",
+        "Database is accessible"
+      ],
+      "test_data": "{\"username\": \"testuser@example.com\", \"password\": \"ValidPass123!\"}",
+      "steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to the login page at /login",
+          "expected_result": "Login form is displayed with email and password input fields."
+        },
+        {
+          "step_number": 2,
+          "action": "Enter valid email and password, then click 'Sign In'",
+          "expected_result": "User is authenticated and redirected to /dashboard with session token established."
+        }
+      ],
+      "postconditions": [
+        "User session active in storage",
+        "Audit log generated for login event"
+      ],
+      "expected_result": "Overall login process completes without error and dashboard is visible."
+    }
+  ],
+  "playwright_script": "import { test, expect } from '@playwright/test';\n\ntest.describe('User Authentication Suite', () => {\n  test('TC-001: Verify successful login with valid credentials', async ({ page }) => {\n    // 1. Navigate to login page\n    await page.goto('/login');\n    await expect(page.getByRole('heading', { name: /sign in/i })).toBeVisible();\n\n    // 2. Fill credentials\n    await page.getByLabel(/email/i).fill('testuser@example.com');\n    await page.getByLabel(/password/i).fill('ValidPass123!');\n    await page.getByRole('button', { name: /sign in/i }).click();\n\n    // 3. Verify redirection & dashboard state\n    await expect(page).toHaveURL(/.*dashboard/);\n    await expect(page.getByTestId('user-profile-header')).toBeVisible();\n  });\n});"
+}

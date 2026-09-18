@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: ba-agent-pro
+    runtime: docker
+    plan: standard
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ba-agent-db
+          property: connectionString
+      - key: GROQ_CREDENTIAL
+        sync: false # Set this in Render Dashboard
+      - key: OPENAI_CREDENTIAL
+        sync: false # Set this in Render Dashboard
+      - key: ADO_ORGANIZATION
+        sync: false # Set this in Render Dashboard
+      - key: ADO_PROJECT
+        sync: false # Set this in Render Dashboard
+      - key: ADO_CREDENTIAL
+        sync: false # Set this in Render Dashboard
+      - key: PORT
+        value: 8000
+
+databases:
+  - name: ba-agent-db
+    plan: standard
+    postgresMajorVersion: 15
